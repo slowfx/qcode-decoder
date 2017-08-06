@@ -2636,11 +2636,14 @@ function URShift( number,  bits)
 }
 
 
-Array.prototype.remove = function(from, to) {
-  var rest = this.slice((to || from) + 1 || this.length);
-  this.length = from < 0 ? this.length + from : from;
-  return this.push.apply(this, rest);
-};
+Object.defineProperty(Array.prototype, "remove", {
+    enumerable: false,
+    value: function(from, to) {
+        var rest = this.slice((to || from) + 1 || this.length);
+        this.length = from < 0 ? this.length + from : from;
+        return this.push.apply(this, rest);
+    }
+});
 
 /*
   Ported to JavaScript by Lazar Laszlo 2011
