@@ -2636,14 +2636,14 @@ function URShift( number,  bits)
 }
 
 
-Object.defineProperty(Array.prototype, "remove", {
+/*Object.defineProperty(Array.prototype, "remove", {
     enumerable: false,
     value: function(from, to) {
         var rest = this.slice((to || from) + 1 || this.length);
         this.length = from < 0 ? this.length + from : from;
         return this.push.apply(this, rest);
     }
-});
+});*/
 
 /*
   Ported to JavaScript by Lazar Laszlo 2011
@@ -3079,7 +3079,7 @@ function FinderPatternFinder()
 					//if (Math.abs(pattern.EstimatedModuleSize - average) > 0.2 * average)
                     if (Math.abs(pattern.EstimatedModuleSize - average) > limit)
 					{
-						this.possibleCenters.remove(i);
+						this.possibleCenters.splice(i, 1);
 						i--;
 					}
 				}
