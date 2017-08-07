@@ -433,7 +433,7 @@ function FinderPatternFinder()
                     if (Math.abs(pattern.EstimatedModuleSize - average) > limit)
 					{
 						this.possibleCenters.splice(i, 1);
-						i--;
+						//i--;
 					}
 				}
 			}
